@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadComponents() {
   // 加载头部组件
   const headerScript = document.createElement('script');
-  headerScript.src = '/JS/components/header.js';
+  headerScript.src = 'JS/components/header.js';
   document.head.appendChild(headerScript);
   
   // 加载页脚组件
   const footerScript = document.createElement('script');
-  footerScript.src = '/JS/components/footer.js';
+  footerScript.src = 'JS/components/footer.js';
   document.head.appendChild(footerScript);
 }
 
@@ -29,7 +29,7 @@ function setCurrentNav() {
     const linkPath = link.getAttribute('href');
     // 处理首页
     if (currentPath === '/' || currentPath.endsWith('index.html')) {
-      if (linkPath === '../index.html' || linkPath === 'index.html') {
+      if (linkPath === 'index.html') {
         link.classList.add('current-nav');
       }
     }
