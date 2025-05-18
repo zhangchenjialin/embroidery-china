@@ -1,0 +1,693 @@
+/*登录注册界面*/
+#bg-box{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#bg-box::after{
+  content: '';/*清除默认边框*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;/*设置背景图片的层级*/
+  width: 100%;
+  height: 100%;
+  background: url(../images/刺绣图片/bg.jpg) no-repeat center/cover;
+  filter: blur(4px);/*模糊效果*/
+}
+
+.rigister-form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  height: 400px;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.137);
+  transform: translate(-50%,-50%);/*设置元素的位置*/
+}
+
+.rigister-form h2{
+  margin: 70px 0 40px;
+  text-align: center;
+}
+
+.login-form h2{
+  margin: 50px 0 40px;
+}
+
+.rigister-form label,
+.rigister-form input{
+  display: inline-block;/*使label和input在同一行*/
+}
+
+.rigister-form label{
+  width: 25%;
+  text-align: right;
+}
+
+.rigister-form input{
+  width: 70%;
+  height: 30px;
+  outline: none;/*去掉默认边框*/
+  border: 1px solid #09d2fe;
+}
+
+.account-bar{
+  margin-bottom: 10px;
+}
+
+.account-bar input{
+  padding-left: 5px;
+  box-sizing: border-box;/*防止文本框大小变化*/
+}
+
+.rigister-form input:hover{
+  border:2px solid #09d2fe;/*鼠标悬停时边框变粗*/
+}
+
+.submit-bar{
+  margin: 40px 0;
+  text-align: center;
+}
+
+.submit-bar input{
+  width: 120px;
+  color: #fff;
+  cursor: pointer;/*鼠标移上去时显示手型*/
+  background-color: #09d2fe;
+}
+
+.submit-bar input:hover{
+  background-color: #0ac6f0;/*鼠标悬停时背景颜色变深*/
+}
+
+.submit-bar input:first-child{
+  margin-right: 20px;
+}
+
+/*角色介绍*/
+.role-card-wrapper{
+  margin-bottom: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.role-card{
+  width: 31%;
+}
+
+.role-img{
+  height: 372px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.137);
+  box-sizing: border-box;/*防止文本框大小变化*/
+}
+
+.role-img img{
+  height: 100%;/*图片自适应*/
+}
+
+.role-text{
+  padding: 20px;
+}
+
+.role-text h3{
+  color: #0281e8;
+  padding-bottom: 10px;
+}
+
+.role-card-wrapper2{
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.137);
+  box-sizing: border-box;
+}
+
+.role-card-wrapper2{
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.role-card-wrapper2 .role-img2{
+  width: 25%;
+}
+
+.role-img2 img{
+  width: 100%;
+}
+
+.role-card-wrapper2 .role-text{
+  flex:1;
+}
+
+/*图集欣赏*/
+.atlas-wrapper img:hover{
+  filter: brightness(1);/*鼠标悬停时图片变亮*/
+}
+
+.phone-img-wrapper,
+.computer-img-wrapper{
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.phone-img-wrapper img{
+  width: 19%;
+  margin-bottom: 15px;
+  filter: brightness(0.9);/*图片变暗*/
+}
+
+.computer-img-wrapper img{
+  width: 32.5%;
+  height: 220px;
+  margin-bottom: 15px;
+  filter: brightness(0.8);/*图片变暗*/
+}
+
+.computer-img-wrapper{
+  margin-bottom: 25px;
+}
+
+/*在线视频*/
+.video-container{
+  background: url(../images/刺绣图片/bg2.jpg) no-repeat center/cover;
+}
+
+.video-container .column-title h3{
+  border-left-color: #ffee34;
+}
+
+.online-video {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin: 25px 0 30px 0;
+}
+
+.online-video a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  height: 44px;
+  padding: 0 22px;
+  background: #fffbe6;
+  color: #ffb61e;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(255,182,30,0.08);
+  border: 1.5px solid #ffb61e;
+  transition: 
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.online-video a:hover {
+  background: #ffb61e;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255,182,30,0.18);
+  transform: translateY(-3px) scale(1.05);
+  text-shadow: 0 2px 8px #fff14377;
+}
+
+.video-top {
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.video-top-left {
+  width: 68%;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(2,129,232,0.08), 0 1.5px 8px rgba(255,182,30,0.08);
+  padding: 18px 18px 12px 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+}
+
+.video-top-left video {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(2,129,232,0.10);
+  background: #f6faff;
+  width: 100%;
+  max-height: 340px;
+  margin-bottom: 8px;
+}
+
+.video-top-right {
+  flex: 1;
+  background: linear-gradient(135deg, #fffbe6 60%, #ffb61e22 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(255,182,30,0.10);
+  padding: 32px 24px 24px 24px;
+  color: #a78e44;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 220px;
+}
+
+.video-top-right h2 {
+  color: #ffb61e;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #fff14344;
+}
+
+.video-top-right h3 {
+  color: #0281e8;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-left: 4px solid #ffb61e;
+  padding-left: 8px;
+}
+
+.video-top-right p {
+  color: #a78e44;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+  text-shadow: 0 1px 4px #fffbe6cc;
+}
+
+.all-comment{
+  background-color: aliceblue;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.137);
+  position: relative;
+}
+
+.comment-item img{
+  position: absolute;
+}
+
+.comment-item{
+  margin-left: 15px;
+  display: inline;
+
+}
+
+.comment-content{
+  margin-left: 70px;
+  margin-top: -25px;
+}
+
+.comment-content span{
+  color: #ffa400;
+}
+
+.comment-content font{
+  font-size: 12px;
+  color: #0000007d;
+}
+
+.comment-content p{
+  margin-top: 5px;
+}
+
+.video-clip-card-wrapper{
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.video-clip-card{
+  width: 19%;
+}
+
+.video-clip-v video{
+  border-radius: 15px;
+  vertical-align: top;
+}
+
+.video-clip-t p{
+  padding: 10px 0;
+}
+
+.danmu-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.danmu-item {
+  position: absolute;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  font-size: 20px;
+  animation: danmuMove 8s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes danmuMove {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.danmu-input {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 10px 0;
+  z-index: 20;
+}
+
+.danmu-input input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 15px;
+  width: 300px;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255,255,255,0.95);
+}
+
+.danmu-input button {
+  border: none;
+  border-radius: 20px;
+  background: #ffb61e;
+  color: #fff;
+  padding: 8px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.danmu-input button:hover {
+  background: #d9b611;
+}
+
+body.video-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+.copyright {
+  flex-shrink: 0;
+  height: 60px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #ffb61e;
+  color: #fff;
+}
+
+/* 让顶部弹幕输入框与其他弹幕输入框区分 */
+.danmu-input-top {
+  position: static;
+  margin-bottom: 0;
+}
+
+/* 刺绣中国片段合集轮播样式 */
+.video-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.video-carousel {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  width: 70%;
+}
+.carousel-item {
+  min-width: 220px;
+  max-width: 220px;
+  text-align: center;
+}
+.carousel-item video {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.carousel-btn {
+  background: #ffb61e;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-btn:hover {
+  background: #d9b611;
+}
+
+/*获奖记录*/
+.award-main-content{
+  margin-bottom: 40px;
+  border-collapse: collapse;/*合并边框*/
+  border-spacing: 0;   /*清除边框间距*/
+  border: 1px solid #0281e8;
+  color: #666;
+  width: 100%;
+  word-break: break-all;/*允许单词换行*/
+  word-wrap: break-word;/*允许长单词换行*/
+  background-color: #ffffff7d;
+}
+
+.award-main-content th{
+  padding: 6px 0;
+  background-color: #0281e8;
+  border-bottom: 1px solid #e9e9e9!important;/*去掉默认边框*/
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.award-main-content tr td{
+  border-top: 1px dashed #0281e8;
+  color: #333;
+  line-height: 24px;
+  padding: 6px;
+}
+
+/*联系我们*/
+.contactus-banner{
+  height: 550px;
+  background: url(../images/刺绣图片/index2.jpg) no-repeat center/cover;
+  background-position: top;
+}
+
+.email-box li{
+  padding-bottom: 20px;
+}
+
+.email-box li a{
+  display: inline-block;
+  margin: 10px 0 -10px;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  color: #034cff;
+  text-decoration: underline;
+}
+
+.email-box li a:hover{
+  color: #fff;
+  background-color: #0281e8;
+}
+
+.leave-message{
+  width: 80%;
+  margin: 0 auto 40px;
+}
+
+.leave-message input{
+  height: 30px;
+  margin-bottom: 20px;
+  outline: none;/*去掉默认边框*/
+  box-sizing: border-box;/*防止文本框大小变化*/
+}
+
+.leave-message input:hover{
+  border:2px solid #09d2fe;/*鼠标悬停时边框变粗*/
+}
+
+.userbar div{
+  width: 50%;
+}
+
+.userbar input{
+  width: 80%;
+  padding-left: 5px;
+}
+
+.useremail input{
+  width: 90%;
+  padding-left: 5px;
+}
+
+.mesagebar label{
+  vertical-align: top;/*使label和input在同一行*/
+}
+
+.mesagebar textarea{
+  width: 90%;
+  height: 200px;
+  padding: 5px;
+  margin-bottom: 20px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.mesagebar textarea:hover{
+  border: 2px solid #09d2fe;
+}
+
+.submitbar{
+  text-align: center;
+}
+
+.submitbar input{
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;/*鼠标移上去时显示手型*/
+}
+
+.submitbar input[type=reset]{
+  margin-left: 25px;/*右对齐*/
+}
+
+/*个人资料页面*/
+.banner-wrapper1{
+  height: 300px;
+  color: #fff;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.137);
+}
+
+.head-portrait{
+  width: 150px;
+  height: 150px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background:url(../images/刺绣图片/role-xiangxiu.jpg) no-repeat center/cover;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.head-name{
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%,-50%);
+}
+
+.head-name h1{
+  font-size: 36px;
+  color: #f2be45;
+}
+
+.container-title-all{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 5%;
+}
+
+.container-title{
+  width: 30%;
+  background-color: #ffa400;
+  padding: 20px;
+  text-align: center;
+  border-right: 1px solid #fff;
+  cursor: pointer;
+}
+
+.container-title:first-child{
+  border-radius: 15px 0 0 15px;
+}
+
+.container-title:last-child{
+  border-right: none;
+  border-radius: 0 15px 15px 0;
+}
+
+.container-title:hover{
+  background-color: #fff143;
+}
+
+.container-content{
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: none;
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.137);
+}
+
+.container-title.active{
+  background-color: #fff143!important;
+}
+
+.comment-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 0 0;
+}
+.comment-input-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+.comment-input-bar button {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #ffb61e;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.comment-input-bar button:hover {
+  background: #d9b611;
+}
+
+

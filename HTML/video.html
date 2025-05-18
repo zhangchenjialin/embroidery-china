@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/common.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <title>刺绣中国 | 在线视频</title>
+  <script src="../JS/danmu.js"></script>
+</head>
+<body class="video-container">
+  <div class="top">
+    <ul class="loginbar clearboth container">
+      <li><a href="../index.html">刺绣<span>中国</span></a></li>
+      <li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../HTML/rigister.html">注册</a></li>
+      <li><a href="../HTML/login.html">登录</a></li>
+    </ul>
+  </div>
+
+  <div id="header">
+    <ul class="nav clearboth container">
+      <li><a href="../index.html">首页</a></li>
+      <li><a href="../HTML/role_intro.html">流派介绍</a></li>
+      <li><a href="../HTML/atlas.html">图集欣赏</a></li>
+      <li><a href="../HTML/video.html" class="current-nav">在线视频</a></li>
+      <li><a href="../HTML/awards.html">获奖记录</a></li>
+      <li><a href="../HTML/contactus.html">联系我们</a></li>
+      <li><a href="../HTML/private.html">个人资料</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="column-title">
+      <h3>在线视频</h3>
+    </div>
+    <div class="online-video">
+      <a href="https://www.bilibili.com/bangumi/play/ep468949?bsource=baidu_aladdin">哔哩哔哩</a> 
+      <a href="https://v.qq.com/x/cover/4e1p6hw0x9si1ye/m0022efc5p5.html?ptag=11975">腾讯视频</a> 
+      <a href="https://www.mgtv.com/b/8249/1698724.html">芒果TV</a> 
+      <a href="https://www.mgtv.com/b/8249/1698724.html">爱奇艺</a> 
+      <a href="https://v.youku.com/v_show/id_XMjg2NTQxODI4.html?source=baidu&amp;refer=sousuotoufang_market.qrwang_00002944_000000_QJFFvi_19031900">优酷</a>
+    </div>
+    
+    <div class="video-top flexbox" style="position: relative;">
+      <div class="video-top-left" style="position: relative;">
+        <video id="mainVideo" src="../video/宣传.mp4" width="100%" height="100%" controls autoplay muted loop style="border-radius: 15px;"></video>
+        <div id="danmuContainer" class="danmu-container"></div>
+      </div>
+      <div class="video-top-right column-text">
+        <h2>刺绣中国宣传片</h2>
+        <h3>简介</h3>
+        <p>纳乾坤于一芥，藏玲珑于一心</p>
+      </div>
+    </div>
+    <div class="danmu-input danmu-input-top">
+      <input type="text" id="danmuInput" maxlength="40" placeholder="发送弹幕...">
+      <button onclick="sendDanmu()">发送</button>
+    </div>
+
+    <div class="video-comment">
+      <div class="column-title">
+        <h3>评论区</h3>
+      </div>
+      <div class="all-comment" id="commentList">
+        <!-- 这里动态插入评论 -->
+      </div>
+      <div class="comment-input-bar">
+        <img id="userAvatar" src="../images/刺绣图片/role-xiangxiu.jpg" style="width: 40px;height: 40px; border-radius: 15px;vertical-align: middle;">
+        <input type="text" id="commentInput" placeholder="说点什么吧..." maxlength="100">
+        <button onclick="sendComment()">发表评论</button>
+      </div>
+    </div>
+    
+    <div class="column-title">
+      <h3>刺绣中国片段合集</h3>
+    </div>
+    <div class="video-carousel-wrapper">
+      <button class="carousel-btn left" onclick="prevVideo()">&#60;</button>
+      <div class="video-carousel" id="videoCarousel">
+        <!-- 只放3个视频，实际可用JS动态切换 -->
+        <div class="carousel-item">
+          <video src="../video/宣传1.mp4" controls width="100%" height="135"></video>
+          <p>中国刺绣1</p>
+        </div>
+        <div class="carousel-item">
+          <video src="../video/宣传2.mp4" controls width="100%" height="135"></video>
+          <p>中国刺绣2</p>
+        </div>
+        <div class="carousel-item">
+          <video src="../video/宣传3.mp4" controls width="100%" height="135"></video>
+          <p>中国刺绣3</p>
+        </div>
+      </div>
+      <button class="carousel-btn right" onclick="nextVideo()">&#62;</button>
+    </div>
+  </div>
+
+  <div class="copyright">
+    版权声明©2024My.All Rights Reserved.
+  </div>
+</body>
+</html>

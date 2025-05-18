@@ -1,0 +1,281 @@
+/*重置样式 reset style*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #fff;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color: inherit; /*继承父元素的颜色*/
+  text-decoration: none; /*去掉下划线*/
+}
+
+/*公共样式 common style*/
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+/*清除浮动*/
+.clear{
+  clear:both;
+}
+
+/*高度塌陷*/
+.clearboth::after{
+  content: '';
+  clear: both;
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/*弹性布局*/
+.flexbox{
+  display: flex;
+}
+
+/*标题文本*/
+.column-title{
+  margin: 40px 0;
+}
+
+/*主标题*/
+.column-title h2{
+  text-align: center;
+}
+
+/*副标题*/
+.column-title h3{
+  padding-left: 10px;/*左边距*/
+  border-left: 8px solid #0281e8;/*左边框*/
+  text-align: left;/*左对齐*/
+}
+
+/*区域文本默认设置*/
+.column-text p{
+  text-indent: 2em;/*首行缩进*/
+  line-height: 30px;/*行高*/
+}
+
+/*区域图片默认修改*/
+.column-img{
+  overflow: hidden;/*溢出隐藏*/
+}
+
+.column-img img{
+  vertical-align: top;/*垂直居中*/
+}
+
+/*当前导航*/
+.current-nav{
+  color: #fff !important;
+  font-size: 20px !important;
+  background-color: #ffb61e !important;
+  border-bottom: 2px solid #ffee34 !important;
+}
+
+/*顶部*/
+.top{
+  background-color: #ffb61e;
+}
+
+.loginbar li{
+  float: right;
+  height: 35px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 35px;
+}
+
+.loginbar li:first-child{
+  float: left;
+  font-weight: 900;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.loginbar li:first-child span{
+  color: #177cb0;
+}
+
+.loginbar li a:hover{
+  text-decoration: underline;/*鼠标悬停时添加下划线*/
+}
+
+.loginbar li:first-child a:hover{
+  text-decoration: none;
+}
+
+/*导航*/
+.nav{
+  background-color: #fff;
+}
+
+.nav li{
+  width: 14.2%;
+  height: 60px;
+  float: left;
+  text-align: center;
+}
+
+.nav li a{
+  display: inline-block;/*将图片和文字分开*/
+  width: 100%;
+  height: 100%;/*保持图片的高宽比*/
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.nav li a:hover{
+  text-decoration: underline;/*鼠标悬停时添加下划线*/
+  color: #fff;
+  background-color: #d9b611;
+}
+
+/*header*/
+#header{
+  position: sticky;/*固定在顶部*/
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.087);
+}
+
+/*banner start*/
+.banner-wrapper{
+  height: 520px;
+  color: #fff;
+  background: url(../images/刺绣图片/banner1.jpg) no-repeat center/cover;
+}
+
+.child-banner{
+  height: 420px;
+  background: url(../images/banner1.jpg) no-repeat center/cover;
+}
+
+/*首页*/
+.column-one-content{
+  color: #d6ecf0;
+  background-color: #57e0ff;
+  background: url(../images/刺绣图片/bg.jpg) no-repeat center bottom/cover;
+  background-attachment: fixed;/*背景固定*/
+}
+
+.column-one-img{
+  width: 100%;
+}
+
+.column-one-text{
+  padding: 20px 40px;
+}
+
+.column-two{
+  height: 250px;
+}
+
+.column-two-card{
+  width: 15%;
+  height: 180px;
+  margin-right: 24px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.153);
+  transition: all .3s linear;/*平滑过渡*/
+}
+
+.column-two-card:last-child{
+  margin: 0;
+}
+
+.column-two-card h2{
+  padding-top: 50px;
+  font-size: 42px;
+  color: #ffb61e;
+  transition: all .3s linear;/*平滑过渡*/
+}
+
+.column-two-card h3{
+  color: #a78e44;
+  margin-bottom: 5px;
+}
+
+.column-two-card p{
+  display: none;/*默认隐藏*/
+  padding: 5px;
+  color: #fff;
+}
+
+/*卡片鼠标滑动效果*/
+.column-two-card:hover{
+  height: 200px;
+  background-color: #ffb61e;
+}
+
+.column-two-card:hover h2{
+  padding-top: 5px;
+  color: #fff;
+}
+
+.column-two-card:hover p{
+  display: block;/*显示*/
+}
+
+.index-video{
+  width: 80%;
+  margin-left: 120px;
+}
+
+.index-video video{
+  vertical-align: top;/*垂直居中*/
+}
+
+.column-four-img{
+  float: left;
+  width: 33%;
+  height: 222px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  overflow: hidden;
+}
+
+.column-four-img img{
+  width: 100%;
+  height: 100%;
+  vertical-align: top;/*垂直居中*/
+  transition: all .3s linear;/*平滑过渡*/
+}
+
+.column-four-img:hover img{
+  transform: scale(1.1);/*放大*/
+}
+
+.column-four{
+  margin-bottom: 40px;
+}
+
+/*版权声明*/
+.copyright{
+  height: 60px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #ffb61e;
+  color: #fff;
+}
