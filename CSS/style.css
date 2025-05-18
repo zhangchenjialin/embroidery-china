@@ -1,5 +1,5 @@
 /*登录注册界面*/
-#bg-box{
+/* #bg-box{
   position: relative;
   width: 100%;
   height: 100vh;
@@ -9,15 +9,15 @@
 }
 
 #bg-box::after{
-  content: '';/*清除默认边框*/
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;/*设置背景图片的层级*/
+  z-index: -1;
   width: 100%;
   height: 100%;
   background: url(../images/刺绣图片/bg.jpg) no-repeat center/cover;
-  filter: blur(4px);/*模糊效果*/
+  filter: blur(4px);
   transition: filter 0.3s ease;
 }
 
@@ -118,19 +118,19 @@
 .submit-bar input[type="reset"]:hover {
   background: #e8e8e8;
   color: #333;
-}
+} */
 
 /* 添加表单验证样式 */
-.account-bar input:invalid {
+/* .account-bar input:invalid {
   border-color: #ff4d4f;
 }
 
 .account-bar input:invalid:focus {
   box-shadow: 0 0 0 3px rgba(255, 77, 79, 0.1);
-}
+} */
 
 /* 添加响应式支持 */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .register-form,
   .login-form {
     width: 90%;
@@ -140,7 +140,7 @@
   .submit-bar input {
     width: 120px;
   }
-}
+} */
 
 /*角色介绍*/
 .role-card-wrapper{
@@ -516,7 +516,7 @@ body.video-container {
   flex: 1 0 auto;
 }
 
-.copyright {
+/* .copyright {
   flex-shrink: 0;
   height: 60px;
   font-size: 12px;
@@ -524,7 +524,7 @@ body.video-container {
   line-height: 60px;
   background-color: #ffb61e;
   color: #fff;
-}
+} */
 
 /* 让顶部弹幕输入框与其他弹幕输入框区分 */
 .danmu-input-top {
@@ -731,7 +731,7 @@ body.video-container {
 }
 
 .userbar input {
-  width: 100%;
+  width: 90%;
   height: 44px;
   padding: 0 15px;
   border: 2px solid #e1e1e1;
@@ -758,7 +758,7 @@ body.video-container {
 }
 
 .useremail input {
-  width: 100%;
+  width: 95%;
   height: 44px;
   padding: 0 15px;
   border: 2px solid #e1e1e1;
@@ -781,7 +781,7 @@ body.video-container {
 }
 
 .mesagebar textarea {
-  width: 100%;
+  width: 95%;
   height: 200px;
   padding: 15px;
   border: 2px solid #e1e1e1;
@@ -1143,98 +1143,6 @@ body.video-container {
   }
 }
 
-/* 顶部导航栏 */
-.top {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.loginbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 40px;
-  padding: 0 20px;
-}
-
-.loginbar li {
-  display: flex;
-  align-items: center;
-}
-
-.loginbar li a {
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.loginbar li a:hover {
-  color: #0281e8;
-}
-
-.loginbar li a span {
-  color: #0281e8;
-  font-weight: 600;
-}
-
-/* 主导航栏 */
-#header {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  position: sticky;
-  top: 40px;
-  z-index: 999;
-}
-
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  padding: 0 20px;
-}
-
-.nav li {
-  position: relative;
-  margin: 0 15px;
-}
-
-.nav li a {
-  color: #333;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.nav li a:hover {
-  color: #0281e8;
-  background: rgba(2, 129, 232, 0.1);
-}
-
-/* 当前导航项样式 */
-.nav li a.current-nav {
-  color: #0281e8;
-  background: rgba(2, 129, 232, 0.1);
-}
-
-.nav li a.current-nav::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 3px;
-  background: #0281e8;
-  border-radius: 3px;
-}
 
 /* 响应式导航 */
 @media screen and (max-width: 768px) {
@@ -1258,60 +1166,7 @@ body.video-container {
   }
 }
 
-/* 页脚样式 */
-.copyright {
-  background: linear-gradient(135deg, #0281e8, #09d2fe);
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-  position: relative;
-  overflow: hidden;
-}
 
-.copyright::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, 
-    rgba(255, 255, 255, 0.1) 25%, 
-    transparent 25%, 
-    transparent 50%, 
-    rgba(255, 255, 255, 0.1) 50%, 
-    rgba(255, 255, 255, 0.1) 75%, 
-    transparent 75%, 
-    transparent
-  );
-  background-size: 20px 20px;
-  animation: moveBackground 20s linear infinite;
-  opacity: 0.1;
-}
-
-@keyframes moveBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 40px 40px;
-  }
-}
-
-/* 通用容器样式 */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* 清除浮动 */
-.clearboth::after {
-  content: '';
-  display: table;
-  clear: both;
-}
 
 /* 响应式优化 */
 @media (max-width: 768px) {
@@ -1341,7 +1196,7 @@ body.video-container {
 }
 
 /* 添加滚动条样式 */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
@@ -1358,7 +1213,7 @@ body.video-container {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #09d2fe;
-}
+} */
 
 /* 添加页面过渡动画 */
 .fade-enter {
@@ -1643,7 +1498,7 @@ body.video-container {
 .user-level {
   display: inline-block;
   padding: 2px 10px;
-  background: #f0f0f0;
+  background: #d9b600;
   border-radius: 15px;
   font-size: 14px;
   margin: 5px 0;

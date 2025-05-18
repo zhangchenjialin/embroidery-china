@@ -26,6 +26,11 @@ yarn-error.log*
 # 构建输出
 dist/
 build/
+out/
+
+# 缓存文件
+.cache/
+.temp/
 
 # 文档文件
 *.doc
