@@ -2,6 +2,36 @@
 .DS_Store
 Thumbs.db
 
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 依赖目录
+node_modules/
+vendor/
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境文件
+.env
+.env.local
+.env.*.local
+
+# 构建输出
+dist/
+build/
+
+# 文档文件
+*.doc
+*.docx
+*.pdf
+
 # 压缩文件
 *.7z
 *.zip
@@ -12,8 +42,5 @@ Thumbs.db
 *.mov
 *.avi
 
-# 编辑器文件
-.vscode/
-.idea/
-*.swp
-*.swo 
+# 临时文件
+*.tmp 

@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>刺绣中国</title>
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="CSS/common.css" as="style">
+  <link rel="preload" href="CSS/style.css" as="style">
+  <link rel="preload" href="images/刺绣图片/banner1.jpg" as="image">
+  
+  <!-- 使用本地CSS文件 -->
   <link rel="stylesheet" href="CSS/common.css">
   <link rel="stylesheet" href="CSS/style.css">
+  
+  <!-- 添加网站图标 -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <!-- 添加网站描述 -->
+  <meta name="description" content="刺绣中国 - 展示中国传统刺绣艺术的网站">
 </head>
 <body>
-  <div class="top">
-    <ul class="loginbar clearboth container">
-      <li><a href="index.html">刺绣<span>中国</span></a></li>
-      <li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="HTML/rigister.html">注册</a></li>
-      <li><a href="HTML/login.html">登录</a></li>
-    </ul>
-  </div>
-
-  <div id="header">
-    <ul class="nav clearboth container">
-      <li><a href="index.html">首页</a></li>
-      <li><a href="HTML/role_intro.html">流派介绍</a></li>
-      <li><a href="HTML/atlas.html">图集欣赏</a></li>
-      <li><a href="HTML/video.html">在线视频</a></li>
-      <li><a href="HTML/awards.html">获奖记录</a></li>
-      <li><a href="HTML/contactus.html">联系我们</a></li>
-      <li><a href="HTML/private.html">个人资料</a></li>
-    </ul>
-  </div>
+  <!-- 头部组件 -->
+  <site-header></site-header>
 
   <div class="banner-wrapper clear"></div>
 
@@ -86,33 +81,83 @@
       <div class="column-title">
         <h2>刺绣图片</h2>
       </div>
-      <div class="column-four-content clearboth">
-        <div class="column-four-img">
-          <img src="images/刺绣图片/banner1.jpg" alt="">
-        </div>
-        <div class="column-four-img">
-          <img src="images/刺绣图片/index1.jpg" alt="">
-        </div>
-        <div class="column-four-img">
-          <img src="images/刺绣图片/index2.jpg" alt="">
-        </div>
-        <div class="column-four-img">
-          <img src="images/刺绣图片/index3.jpg" alt="">
-        </div>
-        <div class="column-four-img">
-          <img src="images/刺绣图片/index4.jpg" alt="">
-        </div>
-        <div class="column-four-img">
-          <img src="images/刺绣图片/index5.jpg" alt="">
+      <div class="column-four-content">
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/刺绣图片/banner1.jpg" alt="刺绣图片1" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>精美刺绣</h3>
+              <p>传统工艺，匠心独运</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/刺绣图片/index1.jpg" alt="刺绣图片2" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>苏绣作品</h3>
+              <p>细腻典雅，栩栩如生</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/刺绣图片/index2.jpg" alt="刺绣图片3" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>湘绣精品</h3>
+              <p>色彩艳丽，层次分明</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/刺绣图片/index3.jpg" alt="刺绣图片4" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>蜀绣佳作</h3>
+              <p>针法细腻，意境深远</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/刺绣图片/index4.jpg" alt="刺绣图片5" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>粤绣精品</h3>
+              <p>金碧辉煌，富丽堂皇</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/刺绣图片/index5.jpg" alt="刺绣图片6" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>汴绣作品</h3>
+              <p>古朴典雅，韵味悠长</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="copyright">
-    版权声明©2024My.All Rights Reserved.
-  </div>
+  <!-- 页脚组件 -->
+  <site-footer></site-footer>
 
-  <script src="JS/index.js"></script>
+  <!-- 加载组件系统 -->
+  <script src="JS/components.js" defer></script>
+  
+  <!-- 添加图片懒加载 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+      
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,37 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>刺绣中国 | 个人资料</title>
-  <link rel="stylesheet" href="/embroidery-china/CSS/common.css">
-  <link rel="stylesheet" href="/embroidery-china/CSS/style.css">
-  <script src="../JS/index.js" type="text/javascript"></script>
+  <!-- 预加载 CSS 文件 -->
+  <link rel="preload" href="../CSS/common.css" as="style">
+  <link rel="preload" href="../CSS/style.css" as="style">
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="../CSS/common.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <!-- 网站图标 -->
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <meta name="description" content="刺绣中国 - 个人资料页面">
+  <!-- JavaScript -->
+  <script src="../JS/index.js" defer></script>
+  <script src="../JS/private.js" defer></script>
 </head>
 <body>
-  <div class="top">
-    <ul class="loginbar clearboth container">
-      <li><a href="./index.html">刺绣<span>中国</span></a></li>
-      <li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../HTML/rigister.html">注册</a></li>
-      <li><a href="../HTML/login.html">登录</a></li>
-    </ul>
-  </div>
-
-  <div id="header">
-    <ul class="nav clearboth container">
-      <li><a href="/embroidery-china/index.html">首页</a></li>
-      <li><a href="../HTML/role_intro.html">流派介绍</a></li>
-      <li><a href="../HTML/atlas.html">图集欣赏</a></li>
-      <li><a href="../HTML/video.html">在线视频</a></li>
-      <li><a href="../HTML/awards.html">获奖记录</a></li>
-      <li><a href="../HTML/contactus.html">联系我们</a></li>
-      <li><a href="../HTML/private.html" class="current-nav">个人资料</a></li>
-    </ul>
-  </div>
+  <!-- 使用组件系统 -->
+  <site-header></site-header>
 
   <div class="banner-wrapper1 clear">
-    <div class="head-portrait"></div>
-    <div class="head-name"><h1>花开富贵</h1></div>
+    <div class="profile-header">
+      <div class="avatar-container">
+        <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="用户头像" id="userAvatar">
+        <div class="avatar-upload">
+          <input type="file" id="avatarInput" accept="image/*" style="display: none">
+          <span>点击更换头像</span>
+        </div>
+      </div>
+      <div class="user-info">
+        <h1>花开富贵</h1>
+        <div class="user-level">刺绣爱好者 Lv.3</div>
+        <div class="user-stats">
+          <div class="stat-item">
+            <div class="stat-value">128</div>
+            <div class="stat-label">作品</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">256</div>
+            <div class="stat-label">关注</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">512</div>
+            <div class="stat-label">粉丝</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="container">
@@ -45,38 +62,401 @@
       <div class="container-title">
         <h3>留言板</h3>
       </div>
+      <div class="container-title">
+        <h3>作品展示</h3>
+      </div>
+      <div class="container-title">
+        <h3>学习进度</h3>
+      </div>
     </div>
 
     <div class="container-content-all">
       <div class="container-content" style="display: block;">
-        <div class="column-content">
-          <h3>联系方式</h3><br>
-          <p>电子邮箱：123456789@123.com</p><br>
-          <p>手机号码：12345678901</p><br>
-          <p>家庭住址：广东科技学院</p><br>
+        <div class="profile-form">
+          <div class="form-group">
+            <label for="nickname">昵称</label>
+            <input type="text" id="nickname" value="花开富贵">
+          </div>
+          <div class="form-group">
+            <label for="bio">个人简介</label>
+            <textarea id="bio">热爱中国传统刺绣艺术，希望能与更多志同道合的朋友交流学习。</textarea>
+          </div>
+          <div class="form-group">
+            <label for="email">电子邮箱</label>
+            <input type="email" id="email" value="123456789@123.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">手机号码</label>
+            <input type="tel" id="phone" value="12345678901">
+          </div>
+          <div class="form-group">
+            <label for="address">家庭住址</label>
+            <input type="text" id="address" value="广东科技学院">
+          </div>
+          <button class="save-btn" onclick="saveProfile()">保存修改</button>
         </div>
       </div>
 
       <div class="container-content">
         <div class="column-content">
-          <h3>动态分享</h3><br>
-          <p>无分享内容</p>
+          <div class="post-form">
+            <textarea placeholder="分享你的刺绣心得..." id="postContent"></textarea>
+            <div class="post-actions">
+              <div class="post-tools">
+                <label class="upload-btn">
+                  <input type="file" accept="image/*" multiple style="display: none">
+                  <i class="fas fa-image"></i> 添加图片
+                </label>
+                <label class="upload-btn">
+                  <input type="file" accept="video/*" style="display: none">
+                  <i class="fas fa-video"></i> 添加视频
+                </label>
+              </div>
+              <button class="post-btn" onclick="publishPost()">发布</button>
+            </div>
+          </div>
+
+          <div class="posts-list">
+            <div class="post-item">
+              <div class="post-header">
+                <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="用户头像" class="post-avatar">
+                <div class="post-info">
+                  <div class="post-author">花开富贵</div>
+                  <div class="post-time">2024-03-20 14:30</div>
+                </div>
+              </div>
+              <div class="post-content">
+                今天完成了一幅苏绣作品，分享一下制作过程~
+              </div>
+              <div class="post-media">
+                <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="作品图片">
+              </div>
+              <div class="post-actions">
+                <button class="action-btn like-btn">
+                  <i class="fas fa-heart"></i> 点赞 (128)
+                </button>
+                <button class="action-btn comment-btn">
+                  <i class="fas fa-comment"></i> 评论 (32)
+                </button>
+                <button class="action-btn share-btn">
+                  <i class="fas fa-share"></i> 分享
+                </button>
+              </div>
+              <div class="post-comments">
+                <div class="comment-item">
+                  <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="评论者头像" class="comment-avatar">
+                  <div class="comment-content">
+                    <div class="comment-author">绣娘小芳</div>
+                    <div class="comment-text">太漂亮了！请问用了什么针法？</div>
+                    <div class="comment-time">2024-03-20 15:00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="container-content"> 
         <div class="column-content">
-          <h3>留言板</h3><br>
-          <input type="textarea" placeholder="请输入留言内容"><br><br>
-          <button type="submit">提交</button>
+          <div class="message-board">
+            <div class="message-form">
+              <textarea placeholder="写下你的留言..." id="messageContent"></textarea>
+              <div class="message-actions">
+                <div class="message-tools">
+                  <label class="upload-btn">
+                    <input type="file" accept="image/*" multiple style="display: none">
+                    <i class="fas fa-image"></i> 添加图片
+                  </label>
+                </div>
+                <button class="message-btn" onclick="submitMessage()">发送留言</button>
+              </div>
+            </div>
+
+            <div class="messages-list" style="margin-top: 20px;">
+              <div class="message-item">
+                <div class="message-header">
+                  <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="留言者头像" class="message-avatar">
+                  <div class="message-info">
+                    <div class="message-author">绣娘小芳</div>
+                    <div class="message-time">2024-03-20 15:30</div>
+                  </div>
+                </div>
+                <div class="message-content">
+                  你好！我是一名刺绣爱好者，想请教一下苏绣的基本针法，可以交流一下吗？
+                </div>
+                <div class="message-media">
+                  <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="留言图片">
+                </div>
+                <div class="message-actions">
+                  <button class="action-btn reply-btn" onclick="showReplyForm(this)">
+                    <i class="fas fa-reply"></i> 回复
+                  </button>
+                  <button class="action-btn like-btn">
+                    <i class="fas fa-heart"></i> 点赞 (15)
+                  </button>
+                </div>
+                <div class="message-replies">
+                  <div class="reply-item">
+                    <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="回复者头像" class="reply-avatar">
+                    <div class="reply-content">
+                      <div class="reply-author">花开富贵</div>
+                      <div class="reply-text">当然可以！苏绣的基本针法包括平针、套针、打籽针等，我们可以详细交流。</div>
+                      <div class="reply-time">2024-03-20 16:00</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="reply-form" style="display: none;">
+                  <textarea placeholder="写下你的回复..." class="reply-textarea"></textarea>
+                  <button class="reply-submit-btn" onclick="submitReply(this)">发送回复</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>  
+      </div>
+
+      <div class="container-content">
+        <div class="works-gallery">
+          <div class="works-filter">
+            <button class="filter-btn active" data-filter="all">全部作品</button>
+            <button class="filter-btn" data-filter="suxiu">苏绣</button>
+            <button class="filter-btn" data-filter="xiangxiu">湘绣</button>
+            <button class="filter-btn" data-filter="yuexiu">粤绣</button>
+          </div>
+
+          <div class="works-grid">
+            <div class="work-item" data-category="suxiu">
+              <div class="work-image">
+                <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="苏绣作品">
+                <div class="work-overlay">
+                  <button class="view-btn" onclick="showWorkDetail(this)">查看详情</button>
+                </div>
+              </div>
+              <div class="work-info">
+                <h3>花开富贵</h3>
+                <p>苏绣 | 2024-03-15</p>
+                <div class="work-stats">
+                  <span><i class="fas fa-heart"></i> 128</span>
+                  <span><i class="fas fa-comment"></i> 32</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item" data-category="xiangxiu">
+              <div class="work-image">
+                <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="湘绣作品">
+                <div class="work-overlay">
+                  <button class="view-btn" onclick="showWorkDetail(this)">查看详情</button>
+                </div>
+              </div>
+              <div class="work-info">
+                <h3>山水之间</h3>
+                <p>湘绣 | 2024-03-10</p>
+                <div class="work-stats">
+                  <span><i class="fas fa-heart"></i> 96</span>
+                  <span><i class="fas fa-comment"></i> 24</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item" data-category="yuexiu">
+              <div class="work-image">
+                <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="粤绣作品">
+                <div class="work-overlay">
+                  <button class="view-btn" onclick="showWorkDetail(this)">查看详情</button>
+                </div>
+              </div>
+              <div class="work-info">
+                <h3>龙凤呈祥</h3>
+                <p>粤绣 | 2024-03-05</p>
+                <div class="work-stats">
+                  <span><i class="fas fa-heart"></i> 156</span>
+                  <span><i class="fas fa-comment"></i> 45</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-content">
+        <div class="learning-progress">
+          <div class="progress-overview">
+            <div class="progress-card">
+              <div class="progress-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <div class="progress-info">
+                <h3>总学习时长</h3>
+                <p>128 小时</p>
+              </div>
+            </div>
+            <div class="progress-card">
+              <div class="progress-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="progress-info">
+                <h3>已获得成就</h3>
+                <p>12 个</p>
+              </div>
+            </div>
+            <div class="progress-card">
+              <div class="progress-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="progress-info">
+                <h3>当前等级</h3>
+                <p>刺绣爱好者 Lv.3</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="courses-section">
+            <h2>我的课程</h2>
+            <div class="courses-list">
+              <div class="course-item">
+                <div class="course-info">
+                  <h3>苏绣基础入门</h3>
+                  <p>学习苏绣的基本针法和技巧</p>
+                  <div class="course-progress">
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 75%"></div>
+                    </div>
+                    <span>75%</span>
+                  </div>
+                </div>
+                <div class="course-actions">
+                  <button class="continue-btn">继续学习</button>
+                  <button class="review-btn">复习课程</button>
+                </div>
+              </div>
+
+              <div class="course-item">
+                <div class="course-info">
+                  <h3>湘绣进阶技巧</h3>
+                  <p>掌握湘绣的特色针法和创作方法</p>
+                  <div class="course-progress">
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 45%"></div>
+                    </div>
+                    <span>45%</span>
+                  </div>
+                </div>
+                <div class="course-actions">
+                  <button class="continue-btn">继续学习</button>
+                  <button class="review-btn">复习课程</button>
+                </div>
+              </div>
+
+              <div class="course-item">
+                <div class="course-info">
+                  <h3>粤绣艺术创作</h3>
+                  <p>学习粤绣的艺术表现和创作理念</p>
+                  <div class="course-progress">
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 20%"></div>
+                    </div>
+                    <span>20%</span>
+                  </div>
+                </div>
+                <div class="course-actions">
+                  <button class="continue-btn">继续学习</button>
+                  <button class="review-btn">复习课程</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievements-section">
+            <h2>我的成就</h2>
+            <div class="achievements-grid">
+              <div class="achievement-item unlocked">
+                <div class="achievement-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="achievement-info">
+                  <h3>初学乍练</h3>
+                  <p>完成第一堂刺绣课程</p>
+                </div>
+              </div>
+
+              <div class="achievement-item unlocked">
+                <div class="achievement-icon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <div class="achievement-info">
+                  <h3>勤学苦练</h3>
+                  <p>累计学习时长达到50小时</p>
+                </div>
+              </div>
+
+              <div class="achievement-item unlocked">
+                <div class="achievement-icon">
+                  <i class="fas fa-medal"></i>
+                </div>
+                <div class="achievement-info">
+                  <h3>技艺精湛</h3>
+                  <p>完成3幅刺绣作品</p>
+                </div>
+              </div>
+
+              <div class="achievement-item">
+                <div class="achievement-icon locked">
+                  <i class="fas fa-crown"></i>
+                </div>
+                <div class="achievement-info">
+                  <h3>大师之路</h3>
+                  <p>完成所有进阶课程</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="copyright"style="position: absolute;bottom: 0;width: 100%;text-align: center;">
-    版权声明©2024My.All Rights Reserved.
+  <site-footer></site-footer>
+
+  <!-- 图片预览模态框 -->
+  <div class="image-preview-modal" onclick="closeImagePreview()">
+    <img src="" alt="预览图片">
   </div>
-  
+
+  <!-- 作品详情模态框 -->
+  <div class="work-detail-modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeWorkDetail()">&times;</button>
+      <div class="work-detail-content">
+        <div class="work-detail-image">
+          <img src="" alt="作品大图">
+        </div>
+        <div class="work-detail-info">
+          <h2 class="work-title"></h2>
+          <div class="work-meta">
+            <span class="work-category"></span>
+            <span class="work-date"></span>
+          </div>
+          <div class="work-description"></div>
+          <div class="work-techniques">
+            <h3>使用技法</h3>
+            <ul class="techniques-list"></ul>
+          </div>
+          <div class="work-stats">
+            <button class="like-btn">
+              <i class="fas fa-heart"></i> <span class="like-count">0</span>
+            </button>
+            <button class="comment-btn">
+              <i class="fas fa-comment"></i> <span class="comment-count">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 加载组件系统 -->
+  <script src="../JS/components.js" defer></script>
 </body>
 </html>

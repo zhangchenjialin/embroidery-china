@@ -86,7 +86,7 @@ a{
 /*当前导航*/
 .current-nav{
   color: #fff !important;
-  font-size: 20px !important;
+  font-size: 16px !important;
   background-color: #ffb61e !important;
   border-bottom: 2px solid #ffee34 !important;
 }
@@ -248,34 +248,23 @@ a{
 
 .column-four-img{
   float: left;
-  width: 33%;
-  height: 222px;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  overflow: hidden;
 }
 
 .column-four-img img{
   width: 100%;
-  height: 100%;
-  vertical-align: top;/*垂直居中*/
   transition: all .3s linear;/*平滑过渡*/
 }
 
 .column-four-img:hover img{
-  transform: scale(1.1);/*放大*/
+  transform: scale(1.1);/*放大效果*/
 }
 
 .column-four{
   margin-bottom: 40px;
 }
 
-/*版权声明*/
 .copyright{
-  height: 60px;
-  font-size: 12px;
   text-align: center;
-  line-height: 60px;
-  background-color: #ffb61e;
-  color: #fff;
+  padding: 20px 0;
+  color: #666;
 }

@@ -1,42 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/embroidery-china/CSS/common.css">
-  <link rel="stylesheet" href="/embroidery-china/CSS/style.css">
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="../CSS/common.css" as="style">
+  <link rel="preload" href="../CSS/style.css" as="style">
+  <link rel="preload" href="../images/刺绣图片/banner1.jpg" as="image">
+  
+  <!-- 使用本地CSS文件 -->
+  <link rel="stylesheet" href="../CSS/common.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  
+  <!-- 添加网站图标 -->
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  
+  <!-- 添加网站描述 -->
+  <meta name="description" content="刺绣中国 - 传统刺绣流派介绍">
   <title>刺绣中国 | 流派介绍</title>
 </head>
 <body>
-  <div class="top">
-    <ul class="loginbar clearboth container">
-      <li><a href="/embroidery-china/index.html">刺绣<span>中国</span></a></li>
-      <li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/embroidery-china/HTML/rigister.html">注册</a></li>
-      <li><a href="/embroidery-china/HTML/login.html">登录</a></li>
-    </ul>
-  </div>
+  <!-- 使用头部组件 -->
+  <site-header></site-header>
 
-  <div id="header">
-    <ul class="nav clearboth container">
-      <li><a href="/embroidery-china/index.html">首页</a></li>
-      <li><a href="/embroidery-china/HTML/role_intro.html" class="current-nav">流派介绍</a></li>
-      <li><a href="/embroidery-china/HTML/atlas.html">图集欣赏</a></li>
-      <li><a href="/embroidery-china/HTML/video.html">在线视频</a></li>
-      <li><a href="/embroidery-china/HTML/awards.html">获奖记录</a></li>
-      <li><a href="/embroidery-china/HTML/contactus.html">联系我们</a></li>
-      <li><a href="/embroidery-china/HTML/private.html">个人资料</a></li>
-    </ul>
-  </div>
-  
   <div class="banner-wrapper clear"></div>
 
   <div class="container">
     <div class="column-title">
-      <h3>流派介绍</h3>
+      <h2>流派介绍</h2>
     </div>
     <div class="role-card-wrapper2 flexbox">
       <div class="column-img role-img2">
-        <img src="/embroidery-china/images/刺绣图片/role-cixiu.jpg" alt="">
+        <img src="../images/刺绣图片/role-cixiu.jpg" alt="刺绣艺术展示" loading="lazy">
       </div>
       <div class="column-text role-text">
         <h3>刺绣</h3>
@@ -46,17 +41,16 @@
     <div class="role-card-wrapper flexbox">
       <div class="role-card">
         <div class="column-img role-img">
-          <img src="/embroidery-china/images/刺绣图片/role_suxiu.jpg" alt="">
+          <img src="../images/刺绣图片/role_suxiu.jpg" alt="苏绣艺术展示" loading="lazy">
         </div>
         <div class="column-text role-text">
           <h3>苏绣</h3>
-          <p>20世纪30年代，丹阳正则女子职业学校绘绣科主任杨守玉，创始乱针绣，丰富了苏绣针法。苏州刺绣，素以精细、雅洁著称。图案秀丽，色泽文静，针法灵活，绣工细致，形象传神。技巧特点可概括为"平、光、齐、匀、和、顺、细、密"八个字。针法有几十种，常用的有齐针、抢针、套针、网绣、纱绣等。绣品分两大类：一类是实用品，有被面、枕套、绣衣、戏衣、台毯、靠垫等；一类是欣赏品，有台屏、挂轴、屏风等。取材广泛，有花卉、动物、人物、山水、书法等。双面绣《金鱼》、《小猫》是苏绣的代表作。
-          </p>
+          <p>20世纪30年代，丹阳正则女子职业学校绘绣科主任杨守玉，创始乱针绣，丰富了苏绣针法。苏州刺绣，素以精细、雅洁著称。图案秀丽，色泽文静，针法灵活，绣工细致，形象传神。技巧特点可概括为"平、光、齐、匀、和、顺、细、密"八个字。针法有几十种，常用的有齐针、抢针、套针、网绣、纱绣等。绣品分两大类：一类是实用品，有被面、枕套、绣衣、戏衣、台毯、靠垫等；一类是欣赏品，有台屏、挂轴、屏风等。取材广泛，有花卉、动物、人物、山水、书法等。双面绣《金鱼》、《小猫》是苏绣的代表作。</p>
         </div>
       </div>
       <div class="role-card">
         <div class="column-img role-img">
-          <img src="/embroidery-china/images/刺绣图片/role-xiangxiu.jpg" alt="">
+          <img src="../images/刺绣图片/role-xiangxiu.jpg" alt="湘绣艺术展示" loading="lazy">
         </div>
         <div class="column-text role-text">
           <h3>湘绣</h3>
@@ -65,7 +59,7 @@
       </div>
       <div class="role-card">
         <div class="column-img role-img">
-          <img src="/embroidery-china/images/刺绣图片/role-yuexiu.jpg" alt="">
+          <img src="../images/刺绣图片/role-yuexiu.jpg" alt="粤绣艺术展示" loading="lazy">
         </div>
         <div class="column-text role-text">
           <h3>粤绣</h3>
@@ -74,7 +68,7 @@
       </div>
       <div class="role-card">
         <div class="column-img role-img">
-          <img src="/embroidery-china/images/刺绣图片/role-shuxiu.jpg" alt="">
+          <img src="../images/刺绣图片/role-shuxiu.jpg" alt="蜀绣艺术展示" loading="lazy">
         </div>
         <div class="column-text role-text">
           <h3>蜀绣</h3>
@@ -83,7 +77,7 @@
       </div>
       <div class="role-card">
         <div class="column-img role-img">
-          <img src="/embroidery-china/images/刺绣图片/role-bianxiu.jpg" alt="">
+          <img src="../images/刺绣图片/role-bianxiu.jpg" alt="汴绣艺术展示" loading="lazy">
         </div>
         <div class="column-text role-text">
           <h3>汴绣</h3>
@@ -92,7 +86,7 @@
       </div>
       <div class="role-card">
         <div class="column-img role-img">
-          <img src="/embroidery-china/images/刺绣图片/role-longxiu.jpg" alt="">
+          <img src="../images/刺绣图片/role-longxiu.jpg" alt="陇绣艺术展示" loading="lazy">
         </div>
         <div class="column-text role-text">
           <h3>陇绣</h3>
@@ -102,8 +96,10 @@
     </div>
   </div>
 
-  <div class="copyright">
-    版权声明©2024My.All Rights Reserved.
-  </div>
+  <!-- 使用页脚组件 -->
+  <site-footer></site-footer>
+
+  <!-- 加载组件系统 -->
+  <script src="../JS/components.js" defer></script>
 </body>
 </html>
