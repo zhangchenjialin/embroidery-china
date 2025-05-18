@@ -145,11 +145,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 刺绣中国片段合集轮播功能
 const videos = [
-  {src: '../video/宣传1.mp4', title: '中国刺绣1'},
-  {src: '../video/宣传2.mp4', title: '中国刺绣2'},
-  {src: '../video/宣传3.mp4', title: '中国刺绣3'},
-  {src: '../video/宣传4.mp4', title: '中国刺绣4'},
-  {src: '../video/宣传5.mp4', title: '中国刺绣5'}
+  {src: '/embroidery-china/video/宣传1.mp4', title: '中国刺绣1'},
+  {src: '/embroidery-china/video/宣传2.mp4', title: '中国刺绣2'},
+  {src: '/embroidery-china/video/宣传3.mp4', title: '中国刺绣3'},
+  {src: '/embroidery-china/video/宣传4.mp4', title: '中国刺绣4'},
+  {src: '/embroidery-china/video/宣传5.mp4', title: '中国刺绣5'}
 ];
 let startIdx = 0;
 
