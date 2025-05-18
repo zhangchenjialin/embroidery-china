@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>刺绣中国 | 在线视频</title>
   <!-- 预加载 CSS 文件 -->
-  <link rel="preload" href="../CSS/common.css" as="style">
-  <link rel="preload" href="../CSS/style.css" as="style">
+  <link rel="preload" href="/CSS/common.css" as="style">
+  <link rel="preload" href="/CSS/style.css" as="style">
   <!-- 样式表 -->
-  <link rel="stylesheet" href="../CSS/common.css">
-  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="/CSS/common.css">
+  <link rel="stylesheet" href="/CSS/style.css">
   <!-- 网站图标 -->
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <meta name="description" content="刺绣中国 - 在线观看刺绣艺术视频">
   <!-- JavaScript -->
-  <script src="../JS/danmu.js" defer></script>
+  <script src="/JS/danmu.js" defer></script>
 </head>
 <body class="video-container">
   <!-- 使用组件系统 -->
@@ -34,7 +34,7 @@
     
     <div class="video-top flexbox" style="position: relative;">
       <div class="video-top-left" style="position: relative;">
-        <video id="mainVideo" src="../video/宣传.mp4" width="100%" height="100%" controls autoplay muted loop style="border-radius: 15px;"></video>
+        <video id="mainVideo" src="/video/宣传.mp4" width="100%" height="100%" controls autoplay muted loop style="border-radius: 15px;"></video>
         <div id="danmuContainer" class="danmu-container"></div>
       </div>
       <div class="video-top-right column-text">
@@ -56,7 +56,7 @@
         <!-- 这里动态插入评论 -->
       </div>
       <div class="comment-input-bar">
-        <img id="userAvatar" src="../images/刺绣图片/role-xiangxiu.jpg" style="width: 40px;height: 40px; border-radius: 15px;vertical-align: middle;">
+        <img id="userAvatar" src="/images/刺绣图片/role-xiangxiu.jpg" style="width: 40px;height: 40px; border-radius: 15px;vertical-align: middle;">
         <input type="text" id="commentInput" placeholder="说点什么吧..." maxlength="100">
         <button onclick="sendComment()">发表评论</button>
       </div>
@@ -70,15 +70,15 @@
       <div class="video-carousel" id="videoCarousel">
         <!-- 只放3个视频，实际可用JS动态切换 -->
         <div class="carousel-item">
-          <video src="../video/宣传1.mp4" controls width="100%" height="135"></video>
+          <video src="/video/宣传1.mp4" controls width="100%" height="135"></video>
           <p>中国刺绣1</p>
         </div>
         <div class="carousel-item">
-          <video src="../video/宣传2.mp4" controls width="100%" height="135"></video>
+          <video src="/video/宣传2.mp4" controls width="100%" height="135"></video>
           <p>中国刺绣2</p>
         </div>
         <div class="carousel-item">
-          <video src="../video/宣传3.mp4" controls width="100%" height="135"></video>
+          <video src="/video/宣传3.mp4" controls width="100%" height="135"></video>
           <p>中国刺绣3</p>
         </div>
       </div>
@@ -89,6 +89,6 @@
   <site-footer></site-footer>
 
   <!-- 加载组件系统 -->
-  <script src="../JS/components.js" defer></script>
+  <script src="/JS/components.js" defer></script>
 </body>
 </html>
