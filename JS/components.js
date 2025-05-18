@@ -9,14 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 加载组件
 async function loadComponents() {
+  // 获取当前页面的路径
+  const currentPath = window.location.pathname;
+  const isInHTMLDir = currentPath.includes('/HTML/');
+  const basePath = isInHTMLDir ? '../' : '';
+  
   // 加载头部组件
   const headerScript = document.createElement('script');
-  headerScript.src = 'JS/components/header.js';
+  headerScript.src = `${basePath}JS/components/header.js`;
   document.head.appendChild(headerScript);
   
   // 加载页脚组件
   const footerScript = document.createElement('script');
-  footerScript.src = 'JS/components/footer.js';
+  footerScript.src = `${basePath}JS/components/footer.js`;
   document.head.appendChild(footerScript);
 }
 
@@ -29,7 +34,7 @@ function setCurrentNav() {
     const linkPath = link.getAttribute('href');
     // 处理首页
     if (currentPath === '/' || currentPath.endsWith('index.html')) {
-      if (linkPath === 'index.html') {
+      if (linkPath === 'index.html' || linkPath === '../index.html') {
         link.classList.add('current-nav');
       }
     }
